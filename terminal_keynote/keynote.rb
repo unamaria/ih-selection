@@ -25,6 +25,7 @@ class TextFileParser
     all_content.each_line("----") do |slide_content|
       selected_content.push(slide_content.strip.chomp("----"))
     end
+    
     selected_content
   end
 end
@@ -37,7 +38,7 @@ class Slide
   end
 
   def slide_height
-    content_height = @content.scan(/\n/).size
+    @content.scan(/\n/).size
   end
 
   def slide_width
@@ -48,6 +49,7 @@ class Slide
         longest_line_size = line.size
       end
     end
+    
     longest_line_size
   end
 
@@ -79,6 +81,7 @@ class SlideGenerator
       slide.place_slide
       @slides << slide
     end 
+    
     @slides  
   end
 end
@@ -94,8 +97,8 @@ class Presentation
   end
 
   def get_input
-      ask_input
-      gets.chomp
+    ask_input
+    gets.chomp
   end
 
   def first_slide?

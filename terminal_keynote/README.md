@@ -1,4 +1,4 @@
-# Console keynote
+# Terminal keynote
 
 ## Description
 
@@ -8,14 +8,11 @@ Keywords: Ruby, terminfo, IO
 
 ## Run it
 
-1. Clone repo (or copy files / download zip)
-
+* Clone repo (or copy files / download zip)
 ```
 git clone https://github.com/unamaria/ih-selection.git
 ```
-
-2. Run file in the terminal
-
+* Run file in the terminal
 ```
 ruby keynote.rb
 ```

@@ -4,11 +4,11 @@
 ----
 This is
 ----
-Orange's new product
+Peach's new product
 ----
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 x                             x
 x                             x
-x       The oTerminal         x
+x       The pTerminal         x
 x                             x
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

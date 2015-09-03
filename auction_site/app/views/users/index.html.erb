@@ -1,0 +1,11 @@
+<h2>Users</h2>
+
+<% if @users.blank? %>
+	<p>No users yet</p>
+<% else %>
+	<% @users.each do |user| %>
+		<ul>
+			<li><%= link_to user.name, user_path(user) %></li>
+		</ul>
+	<% end %>
+<% end %>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ConcertNetwork</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+	<nav class="navbar navbar-default">
+		<ul class="nav navbar-nav">
+			<li><%= link_to "Concerts", concerts_path %></li>
+			<li><%= link_to "Add new concert", new_concert_path %></li>
+			<li><%= link_to "Popular concerts", concerts_popular_path %></li>
+			<li><%= link_to "Search by price", concerts_search_path %></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<% if current_user %>
+				<li><%= link_to "Log out","/logout" %></li>
+			<% else %>	
+				<li><%= link_to "Log in", "/login" %></li>
+				<li><%= link_to "Sign up", "/signup" %></li>
+			<% end %>
+		</ul>
+	</nav>
+	<h1>Find your next concert</h1>
+</header>
+<div class="container">
+
+<% if flash[:message] %>
+	<div class="alert alert-warning" role="alert"><%= flash[:message] %></div>
+<% end %>
+
+<%= yield %>
+</div>
+<footer class="footer">
+  <div class="container">
+		<small class="text-muted pull-left">© 2015</small>
+		<p class="text-muted pull-right">Exercise for the web development bootcamp at <a href="http://www.ironhack.com">Ironhack</a></p>
+  </div>
+</footer>
+</body>
+</html>

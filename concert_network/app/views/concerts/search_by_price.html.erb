@@ -1,0 +1,20 @@
+<h2>How much are you willing to spend?</h2>
+
+<%= form_tag(concerts_search_path, method: "get") %>
+<%= label_tag(:amount, "Maximum price") %>
+<%= text_field_tag(:amount) %>
+<%= submit_tag("Search concerts") %>
+
+<% if !@concerts.blank? %>
+	<h3><%= @concerts.count %> results for <%= @amount %>€ or less</h3>
+
+	<ul>
+	<% @concerts.each do |concert| %>
+		<li><p>
+		<%= link_to concert.band, concert_path(concert) %>
+		 (<%= concert.city %>)  
+		<%= concert.price %>€
+		</p></li>
+	<% end %>
+	</ul>
+<% end %>

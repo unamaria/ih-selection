@@ -1,0 +1,13 @@
+<h2>Most popular concerts</h2>
+
+<% if !@concerts.blank? %>
+	<ol>
+	<% @concerts.each do |concert| %>
+		<li><p>
+		<%= link_to concert.band, concert_path(concert) %>
+		 (<%= concert.city %>)  
+		<%= concert.price %>€
+		</p></li>
+	<% end %>
+	</ol>
+<% end %>

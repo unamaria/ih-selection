@@ -1,0 +1,33 @@
+<h2><%= @product.title %></h2>
+
+<p>Description: <%= @product.description %></p>
+<p>Minimum bid: <%= @product.min_bid %>€</p>
+<p>Bidding deadline: <%= @product.deadline %></p>
+
+<% if @bids.blank? %>
+	<p>No bids yet!</p>
+<% else %>
+	<h3>Bids for this product</h3>
+	<% @bids.each do |bid| %>
+		<ul>
+			<li><strong><%= bid.user.name %>:</strong> <%= bid.amount %>€</li>
+		</ul>
+	<% end %>
+<% end %>
+
+<% if @product.deadline >= Date.current %>
+	<h3>Do you want to bid?</h3>
+	<%= form_tag product_bids_path(@product, @bid) do %>
+	<%= render "layouts/errors", model: @bid %>
+		<%= label_tag :amount %>
+		<%= number_field_tag :amount %>
+		<br />
+		<%= label_tag :email %>
+		<%= text_field_tag :email %>
+		<br />
+		<%= submit_tag 'Bid!' %>
+	<% end %>
+<% else %>
+	<p><%= @winner.name %> won this bid</p>
+
+<% end %>

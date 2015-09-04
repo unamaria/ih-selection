@@ -62,8 +62,12 @@ Game.prototype.checkInput = function(err, input) {
 				this.resume();
 			} else {
 				var pickedObject = this.currentRoom.getObject(inputCommands[2]);
-				this.user.pickObject(pickedObject);
-				this.currentRoom.removeObject(pickedObject);			
+				if (typeof pickedObject != 'undefined') {
+					this.user.pickObject(pickedObject);
+					this.currentRoom.removeObject(pickedObject);			
+				} else {
+					console.log(inputCommands[2].toLowerCase() + ' is not an available object.')
+				}
 				this.resume();
 			}
 		} else {

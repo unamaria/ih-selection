@@ -18,20 +18,20 @@ User.prototype.getName = function(callback) {
 
 User.prototype.getObject = function (objName) {
 	return this.inventory.filter( function (obj) {
-			return obj.name = objName;
+			return obj.name == objName;
 		})[0];
 };
 
 User.prototype.pickObject = function(object) {
 	this.inventory.push(object);
-	console.log('You picked up a ' + object.name.toLowerCase());
+	console.log('You picked up a ' + object.name.toLowerCase() + '.');
 };
 
 User.prototype.dropObject = function(object) {
 	this.inventory = this.inventory.filter (function(obj) {
 		return object.name !== obj.name;
 	});
-	console.log('You dropped a ' + object.name.toLowerCase());
+	console.log('You dropped a ' + object.name.toLowerCase() + '.');
 };
 
 User.prototype.showInventory = function() {

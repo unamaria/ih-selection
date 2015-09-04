@@ -12,13 +12,13 @@ Room.prototype.correctMove = function(input) {
 
 Room.prototype.getObject = function (objName) {
 	return this.objectsAvailable.filter( function (obj) {
-			return obj.name = objName;
-		})[0];
+			return obj.name.toUpperCase() === objName;
+	})[0];
 }
 
 Room.prototype.showObjects = function() {
 	this.objectsAvailable.forEach (function(object) {
-		console.log('You can see a ' + object.name.toLowerCase());
+		console.log('You can see a ' + object.name.toLowerCase() + '.');
 	});
 };
 

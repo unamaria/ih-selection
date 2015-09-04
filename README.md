@@ -8,6 +8,10 @@ Check each exercise README for more information.
 
 Command line game in Node that quizzes on world capitals.
 
+## Game of rooms
+
+Command line game in Node to move around rooms and interact with objects.
+
 ## Terminal keynote
 
 Ruby program to present a file's content as slides in the terminal.

@@ -29,14 +29,14 @@ Quiz.prototype.randomQuestion = function() {
 
 Quiz.prototype.firstQuestion = function() {
 	console.log('Hi ' + this.user.name + '!');
-	console.log('Let\'s check how good are you with capitals');
+	console.log('Let\'s check how good you are with capitals. Type \'exit\' to stop.');
 	this.currentQuestion = this.questions[0];
 	this.getInput();
 };
 
 Quiz.prototype.nextQuestion = function() {
 	if (this.currentQuestionIndex === this.questions.length - 1) {
-		console.log('You earned a total of ' + this.user.totalPoints + ' points');
+		console.log('You earned a total of ' + this.user.totalPoints + ' points.');
 		if (this.user.totalPoints > 0) {
 			console.log('Well done!');
 		} else {
@@ -45,7 +45,7 @@ Quiz.prototype.nextQuestion = function() {
 	} else {
 		this.currentQuestionIndex++;
 		if (this.randomIndex === this.currentQuestionIndex) {
-			console.log('This is a bonus question, it has doubled its points!');
+			console.log('* This is a bonus question, it has doubled its points! *');
 		}
 		this.currentQuestion = this.questions[this.currentQuestionIndex];
 		this.getInput();
@@ -53,7 +53,10 @@ Quiz.prototype.nextQuestion = function() {
 };
 
 Quiz.prototype.checkInput = function(err, input) {
-	if (this.currentQuestion.correctAnswer(input)) {
+	if (input.toLowerCase() === 'exit') {
+		process.exit(0);
+	}
+	else if (this.currentQuestion.correctAnswer(input)) {
 		console.log('You are good!');
 		this.user.totalPoints += this.currentQuestion.points;
 		this.nextQuestion();
@@ -65,7 +68,11 @@ Quiz.prototype.checkInput = function(err, input) {
 };
 
 Quiz.prototype.getInput = function() {
-	console.log('You have ' + this.user.totalPoints + ' points');
+	if (this.user.totalPoints === 1 || this.user.totalPoints === -1) {
+		console.log('You have ' + this.user.totalPoints + ' point.');
+	} else {
+		console.log('You have ' + this.user.totalPoints + ' points.');
+	}
 	options = {
 		prompt: this.currentQuestion.print()
 	};

@@ -17,6 +17,7 @@ Game.prototype.help = function() {
 	console.log('Want to pick up an object? -> Pick up <object>');
 	console.log('Want to drop an object? -> Drop <object>');
 	console.log('Want to check your inventory? -> Inventory');
+	console.log('Want to exit the game? -> Exit');
 	console.log('Want to see these intructions again? -> Help \n');
 };
 
@@ -79,6 +80,8 @@ Game.prototype.checkInput = function(err, input) {
 	} else if (inputCommands[0] === 'HELP') {
 		this.help();
 		this.resume();
+	} else if (inputCommands[0] === 'EXIT') {
+		process.exit(0);
 	}	else {
 		console.log(this.currentRoom.errorMessage);
 		this.resume();

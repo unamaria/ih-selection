@@ -77,8 +77,12 @@ Game.prototype.checkInput = function(err, input) {
 	} else if (inputCommands[0] === 'DROP') {
 		if (this.user.inventory.length > 0) {
 			var droppedObject = this.user.getObject(inputCommands[1]);
-			this.user.dropObject(droppedObject);
-			this.currentRoom.addObject(droppedObject);
+			if (typeof droppedObject != 'undefined') {
+				this.user.dropObject(droppedObject);
+				this.currentRoom.addObject(droppedObject);				
+			} else {
+				console.log('Are you sure you have a ' + inputCommands[1].toLowerCase() + '?');
+			}
 		} else {
 			console.log('You don\'t have any objects.');
 		}

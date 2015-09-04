@@ -18,7 +18,7 @@ User.prototype.getName = function(callback) {
 
 User.prototype.getObject = function (objName) {
 	return this.inventory.filter( function (obj) {
-			return obj.name == objName;
+			return obj.name.toUpperCase() == objName;
 		})[0];
 };
 

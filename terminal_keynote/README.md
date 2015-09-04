@@ -8,11 +8,6 @@ Keywords: Ruby, terminfo, IO
 
 ## Run it
 
-* Clone repo (or copy files / download zip)
-```
-git clone https://github.com/unamaria/ih-selection.git
-```
-* Run file in the terminal
-```
-ruby keynote.rb
-```
+* Install dependencies `gem install ruby-terminfo`
+* Clone repo `git clone https://github.com/unamaria/ih-selection.git` (or copy files / download zip)
+* Run file in the terminal `ruby keynote.rb`

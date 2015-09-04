@@ -10,4 +10,4 @@ Command line game in Node that quizzes on world capitals.
 
 ## Terminal keynote
 
-Simple Ruby program to present a file's content as slides in the terminal.
+Ruby program to present a file's content as slides in the terminal.

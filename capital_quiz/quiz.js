@@ -31,6 +31,9 @@ Quiz.prototype.firstQuestion = function() {
 	console.log('Hi ' + this.user.name + '!');
 	console.log('Let\'s check how good you are with capitals. Type \'exit\' to stop.');
 	this.currentQuestion = this.questions[0];
+	if (this.randomIndex === this.currentQuestionIndex) {
+			console.log('* This is a bonus question, it has doubled its points! *');
+	}
 	this.getInput();
 };
 

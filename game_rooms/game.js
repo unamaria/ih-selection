@@ -74,10 +74,14 @@ Game.prototype.checkInput = function(err, input) {
 			console.log('There is nothing to pick up');
 			this.resume();
 		}
-	} else if (inputCommands[0] === 'DROP') { 
-		var droppedObject = this.user.getObject(inputCommands[1]);
-		this.user.dropObject(droppedObject);
-		this.currentRoom.addObject(droppedObject);
+	} else if (inputCommands[0] === 'DROP') {
+		if (this.user.inventory.length > 0) {
+			var droppedObject = this.user.getObject(inputCommands[1]);
+			this.user.dropObject(droppedObject);
+			this.currentRoom.addObject(droppedObject);
+		} else {
+			console.log('You don\'t have any objects.');
+		}
 		this.resume();
   } else if (inputCommands[0] === 'INVENTORY') {
 		this.user.showInventory();

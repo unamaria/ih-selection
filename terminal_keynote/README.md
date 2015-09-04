@@ -8,6 +8,6 @@ Keywords: Ruby, terminfo, IO
 
 ## Run it
 
-* Install dependencies `gem install ruby-terminfo`
 * Clone repo `git clone https://github.com/unamaria/ih-selection.git` (or copy files / download zip)
+* Install dependencies `gem install ruby-terminfo`
 * Run file in the terminal `ruby keynote.rb`

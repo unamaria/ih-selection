@@ -4,6 +4,10 @@ Selection of some of the exercises I made while attending [Ironhack](http://www.
 
 Check each exercise README for more information.
 
+## Capital quiz
+
+Command line game in Node that quizzes on world capitals.
+
 ## Terminal keynote
 
 Simple Ruby program to present a file's content as slides in the terminal.

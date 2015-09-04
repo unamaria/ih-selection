@@ -29,7 +29,10 @@ Game.prototype.resume = function() {
 
 Game.prototype.start = function() {
 	console.log('*------------ Welcome to Game of Rooms ------------*\n');
-	console.log('Hello, ' + this.user.name + '\n');
+	if (this.user.name === "" ) {
+		this.user.name = "misterious person";
+	}
+	console.log('Hello, ' + this.user.name + '!\n');
 	this.help();
 	this.currentRoom = this.rooms[0];
 	this.resume();

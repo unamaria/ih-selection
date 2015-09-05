@@ -25,7 +25,8 @@ class ProductsController < ApplicationController
 		if @product.valid? && @product.present?
 			@product.user_id = params[:user_id]
 			@product.save
-			redirect_to user_path(@user), notice: "Product sucessfully added"
+			flash[:success] = "Product sucessfully added"
+			redirect_to product_url(@product.id)
 		else
 			render :new
 		end

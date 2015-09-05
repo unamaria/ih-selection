@@ -2,13 +2,27 @@
 <p>Email address: <%= @user.email %></p>
 <p>Member for <%= time_ago_in_words(@user.created_at) %></p>
 
-<h3>Products</h3>
+<h3>My products</h3>
 <% if @user.products.blank? %>
 	<p>No products yet.</p>
 <% else %>
 	<ul>
 		<% @user.products.each do |product| %>
 		<li><%= link_to product.title, product_path(product) %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h3>My bids</h3>
+<% if @user.bids.blank? %>
+	<p>No bids yet.</p>
+<% else %>
+	<ul>
+		<% @user.bids.each do |bid| %>
+		<li>
+			<%= link_to bid.product.title, product_path(bid.product.id) %>: 
+			<%= bid.amount %>€
+		</li>
 		<% end %>
 	</ul>
 <% end %>

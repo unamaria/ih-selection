@@ -1,19 +1,19 @@
 <h2>Add new product</h2>
 
 <%= form_for [@user, @product] do |f| %>
-<%= render 'layouts/errors', model: @product %>
+	<%= render 'layouts/errors', model: @product %>
 
 	<%= f.label :title %>
-	<%= f.text_field :title %>
-	<br />
+	<%= f.text_field :title, class: 'form-control' %>
+	
 	<%= f.label :description %>
-	<%= f.text_field :description %>
-	<br />
-	<%= f.label :min_bid %>
-	<%= f.number_field :min_bid %>
-	<br />
+	<%= f.text_field :description, class: 'form-control' %>
+	
+	<%= f.label :min_bid, 'Minimum bid' %>
+	<%= f.number_field :min_bid, class: 'form-control' %>
+	
 	<%= f.label :deadline %>
-	<%= f.date_field :deadline %>
-	<br />
-	<%= f.submit %>
+	<%= f.date_field :deadline, class: 'form-control' %>
+	
+	<%= f.submit 'Add product', class: 'btn btn-primary' %>
 <% end %>

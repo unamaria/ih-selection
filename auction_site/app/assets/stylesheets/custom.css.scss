@@ -1,2 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+/* forms */
+input, textarea, select {
+  margin-bottom: 1em;
+}

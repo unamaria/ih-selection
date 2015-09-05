@@ -18,16 +18,15 @@
 <% if @product.deadline >= Date.current %>
 	<h3>Do you want to bid?</h3>
 	<%= form_tag product_bids_path(@product, @bid) do %>
-	<%= render "layouts/errors", model: @bid %>
+		<%= render "layouts/errors", model: @bid %>
 		<%= label_tag :amount %>
-		<%= number_field_tag :amount %>
-		<br />
+		<%= number_field_tag :amount, nil, class: 'form-control' %>
+		
 		<%= label_tag :email %>
-		<%= text_field_tag :email %>
-		<br />
-		<%= submit_tag 'Bid!' %>
+		<%= text_field_tag :email, nil, class: 'form-control' %>
+		
+		<%= submit_tag 'Bid!', class: 'btn btn-primary' %>
 	<% end %>
 <% else %>
 	<p><%= @winner.name %> won this bid</p>
-
 <% end %>

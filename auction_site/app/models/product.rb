@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
 	validate :deadline_cannot_be_past
 
 	def deadline_cannot_be_past
-		if deadline < Date.today
+		if deadline && deadline < Date.today
 			errors.add(:deadline, "can't be in the past")
 		end
 	end

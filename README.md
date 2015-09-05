@@ -4,6 +4,10 @@ Selection of some of the exercises I made while attending [Ironhack](http://www.
 
 Check each exercise README for more information.
 
+## Auction site
+
+Ruby on Rails app where users can submit products to sell and other users can bid on them.
+
 ## Capital quiz
 
 Command line game in Node that quizzes on world capitals.

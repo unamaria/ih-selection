@@ -3,9 +3,11 @@
 <% if @products.blank? %>
 	<p>No products yet.</p>
 <% else %>
+	<%= will_paginate %>
 	<ul>
 		<% @products.each do |product| %>
 			<li><%= link_to product.title, product_path(product) %></li>
 		<% end %>
 	</ul>
+	<%= will_paginate %>
 <% end %>

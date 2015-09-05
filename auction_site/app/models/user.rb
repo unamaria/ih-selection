@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-	has_many :products
-	has_many :bids
+	has_many :products, dependent: :destroy
+	has_many :bids, dependent: :destroy
 	has_many :bidded_products, through: :bids, source: :product
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

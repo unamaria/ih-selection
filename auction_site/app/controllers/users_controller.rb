@@ -16,7 +16,8 @@ class UsersController < ApplicationController
 
 		if @user.valid? && @user.present?
 			@user.save
-			redirect_to user_path(@user), notice: "User #{@user.name} added correctly"
+			flash[:success] = "Welcome #{@user.name}! You can now log in"
+			redirect_to user_path(@user)
 		else
 			render :new
 		end

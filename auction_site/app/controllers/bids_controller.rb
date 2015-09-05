@@ -1,11 +1,12 @@
 class BidsController < ApplicationController
 	def create
 		@product = Product.find(params[:product_id])
-		user = User.find_by_email(params[:email])
+		user = current_user
 		@bid = user.bids.new amount: params[:amount], product_id: @product.id
 
 		if @bid.valid? && @bid.present?
 			@bid.save
+			flash[:success] = "Bid successfully added!"
 			redirect_to product_path(@product)
 		else
 			@bids = Bid.where(product_id: @product.id) 

@@ -3,6 +3,7 @@
 <p>Description: <%= @product.description %></p>
 <p>Minimum bid: <%= @product.min_bid %>€</p>
 <p>Bidding deadline: <%= @product.deadline %></p>
+<p>Owner: <%= @product.owner.name %></p>
 
 <% if @bids.blank? %>
 	<p>No bids yet!</p>
@@ -15,18 +16,20 @@
 	<% end %>
 <% end %>
 
-<% if @product.deadline >= Date.current %>
-	<h3>Do you want to bid?</h3>
-	<%= form_tag product_bids_path(@product, @bid) do %>
-		<%= render "layouts/errors", model: @bid %>
-		<%= label_tag :amount %>
-		<%= number_field_tag :amount, nil, class: 'form-control' %>
-		
-		<%= label_tag :email %>
-		<%= text_field_tag :email, nil, class: 'form-control' %>
-		
-		<%= submit_tag 'Bid!', class: 'btn btn-primary' %>
+<% if current_user && current_user != @product.owner%>
+	<% if @product.deadline >= Date.current %>
+		<h3>Do you want to bid?</h3>
+		<%= form_tag product_bids_path(@product, @bid) do %>
+			<%= render "layouts/errors", model: @bid %>
+			<%= label_tag :amount %>
+			<%= number_field_tag :amount, nil, class: 'form-control' %>
+			
+			<%= submit_tag 'Bid!', class: 'btn btn-primary' %>
+		<% end %>
+	<% else %>
+		<p><%= @winner.name %> won this bid</p>
 	<% end %>
-<% else %>
-	<p><%= @winner.name %> won this bid</p>
+<% elsif !current_user %>	
+	<p>Want to bid? <%= link_to 'Log in', login_path %> or 
+	<%= link_to 'sign up', new_user_path %>.</p>
 <% end %>

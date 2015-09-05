@@ -9,7 +9,7 @@ When users create a product, they should set a minimum price. Then when other us
 
 Rails version: 4.2.3
 
-Keywords: Ruby, Ruby on Rails
+Keywords: Ruby on Rails, Bootstrap
 
 ## Run it
 

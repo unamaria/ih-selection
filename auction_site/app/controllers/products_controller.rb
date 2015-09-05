@@ -10,18 +10,15 @@ class ProductsController < ApplicationController
 	end
 
 	def new
-		@user = current_user
 		@product = Product.new
 	end
 
 	def create
-		product = Product.new product_params
-		current_user.products << product
-		if product.save
+		@product = Product.new product_params		
+		if current_user.products << @product
 			flash[:success] = "Product sucessfully added!"
-			redirect_to product_url(product.id)
+			redirect_to product_url(@product)
 		else
-			flash[:danger] = "Something went wrong."
 			render :new
 		end
 	end

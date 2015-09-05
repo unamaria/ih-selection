@@ -1,6 +1,6 @@
 <h2>Add new product</h2>
 
-<%= form_for [@user, @product] do |f| %>
+<%= form_for @product do |f| %>
 	<%= render 'layouts/errors', model: @product %>
 
 	<%= f.label :title %>

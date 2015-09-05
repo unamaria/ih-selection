@@ -1,11 +1,11 @@
 <h2>Products available</h2>
 
 <% if @products.blank? %>
-	<p>No products yet</p>
+	<p>No products yet.</p>
 <% else %>
-	<% @products.each do |product| %>
-		<ul>
+	<ul>
+		<% @products.each do |product| %>
 			<li><%= link_to product.title, product_path(product) %></li>
-		</ul>
-	<% end %>
+		<% end %>
+	</ul>
 <% end %>

@@ -7,27 +7,21 @@ class ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		@bid = Bid.new
 		@bids = Bid.where(product_id: @product.id) 
-		# if !@product.bids.blank? 
-		# 	highest_bid = @product.bids.max_by { |bid| bid.amount }
-		# 	@winner = User.find(highest_bid.user_id)
-		# end
 	end
 
 	def new
-		@user = User.find(params[:user_id])
+		@user = current_user
 		@product = Product.new
 	end
 
 	def create
-		@user = User.find(params[:user_id])
-		@product = Product.new product_params
-
-		if @product.valid? && @product.present?
-			@product.user_id = params[:user_id]
-			@product.save
-			flash[:success] = "Product sucessfully added"
-			redirect_to product_url(@product.id)
+		product = Product.new product_params
+		current_user.products << product
+		if product.save
+			flash[:success] = "Product sucessfully added!"
+			redirect_to product_url(product.id)
 		else
+			flash[:danger] = "Something went wrong."
 			render :new
 		end
 	end

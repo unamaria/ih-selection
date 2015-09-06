@@ -1,19 +1,18 @@
-# CONCERTS FINDER
+# Concert network
 
-Create an application to help our users find interesting concerts.
+## Description
 
-# Iteration 1
-We need to be able to create new concerts and view a concert details.
-Each concert has a band, a venue, a city, a date, a price and a description.
+Application to help users find interesting concerts. Find concerts by how much you are willing to spend. Check 10 most commented concerts.
 
-# Iteration 2
-In the front page we need to see what is happening today and a list called "later this month" with all the concerts later this month.
+Rails version: 4.2.3
 
-# Iteration 3
-Each concert can be commented so visitors can say something about the concert.
+Keywords: Ruby on Rails, Bootstrap
 
-# Iteration 4
-Create a page where the user can say how much is she willing to spend and show her a list with all future concerts for that amount or less. 
+## Run it
 
-# Iteration 5
-Add a page called most popular concerts where you can see the 10 most commented concerts ordered by number of comments.
+* Clone repo `git clone https://github.com/unamaria/ih-selection.git` (or copy files / download zip)
+* Install dependencies `bundle install`
+* Run migrations `rake db:migrate`
+* Seed database `rake db:seed`
+* Run server `rails s`
+* Access app on browser `http://localhost:3000/`

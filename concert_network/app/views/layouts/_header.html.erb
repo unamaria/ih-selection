@@ -14,7 +14,9 @@
 	    <div class="collapse navbar-collapse" id="navbar-collapsed">
 				<ul class="nav navbar-nav">
 					<li><%= link_to "Concerts", concerts_path %></li>
-					<li><%= link_to "Add new concert", new_concert_path %></li>
+					<% if admin?(current_user) %>
+						<li><%= link_to "Add new concert", new_concert_path %></li>
+					<% end %>
 					<li><%= link_to "Popular concerts", concerts_popular_path %></li>
 					<li><%= link_to "Search by price", concerts_search_path %></li>
 				</ul>

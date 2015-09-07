@@ -12,6 +12,10 @@ Ruby on Rails app where users can submit products to sell and other users can bi
 
 Command line game in Node that quizzes on world capitals.
 
+## Concert network
+
+Ruby on Rails app to help users find interesting concerts.
+
 ## Game of rooms
 
 Command line game in Node to move around rooms and interact with objects.

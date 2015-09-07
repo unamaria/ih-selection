@@ -9,18 +9,21 @@
 		<% end %>
 		</ul>
 	<% else %>
-		<p>No concerts today :O</p>
+		<p>No concerts today.</p>
 	<% end %>
 </main>
 
 <aside class="col-md-4">
 	<h2>Later this month</h2>
-
-	<ul>
-	<% @today_to_end_month_concerts.each do |concert| %>
-		<li>
-		<%= link_to "#{concert.band} - #{concert.city}", concert_path(concert) %>
-		</li>
-	<% end %>
-	</ul>
+		<% if !@today_to_end_month_concerts.blank? %>
+			<ul>
+				<% @today_to_end_month_concerts.each do |concert| %>
+				<li>
+				<%= link_to "#{concert.band} - #{concert.city}", concert_path(concert) %>
+				</li>
+			<% end %>
+			</ul>
+		<% else %>
+			<p>No concerts later this month.</p>
+		<% end %>		
 </aside>

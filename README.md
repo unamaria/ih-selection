@@ -20,6 +20,10 @@ Ruby on Rails app to help users find interesting concerts.
 
 Command line game in Node to move around rooms and interact with objects.
 
+## Spotify player
+
+Music player handled with JS to search a song in the [Spotify API](https://developer.spotify.com/web-api/search-item/) and listen to its preview.
+
 ## Terminal keynote
 
 Ruby program to present a file's content as slides in the terminal.

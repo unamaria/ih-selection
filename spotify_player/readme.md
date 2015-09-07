@@ -1,4 +1,4 @@
-# Spotify search
+# Spotify player
 
 ## Description
 

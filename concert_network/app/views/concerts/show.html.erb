@@ -1,5 +1,5 @@
 <h2>
-<%= @concert.band %> <%= @concert.date.strftime("%d-%m-%Y") %> </h2>
+<%= @concert.band %> (<%= @concert.date.strftime("%d-%m-%Y") %>) </h2>
 <%= image_tag @concert.poster.url(:medium) %>
 <p>City: <%= @concert.city %></p>
 <p>Venue: <%= @concert.venue %></p>
@@ -15,9 +15,8 @@
 	<%= f.submit 'Comment', class: 'btn btn-primary' %>
 <% end %>
 
+<h4><%= @comments.count %> <%= "comment".pluralize(@comments.count) %> so far</h4>
 <% if !@comments.blank? %>
-	<h4><%= @comments.count %> <%= "comment".pluralize(@comments.count) %> so far</h4>
-
 	<% @comments.each do |comment| %>
 		<p><%= comment.text %></p>
 		<p><%= comment.created_at.strftime("%d-%m-%Y at %H:%M") %></p>

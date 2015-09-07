@@ -8,26 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<header>
-	<nav class="navbar navbar-default">
-		<ul class="nav navbar-nav">
-			<li><%= link_to "Concerts", concerts_path %></li>
-			<li><%= link_to "Add new concert", new_concert_path %></li>
-			<li><%= link_to "Popular concerts", concerts_popular_path %></li>
-			<li><%= link_to "Search by price", concerts_search_path %></li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right">
-			<% if current_user %>
-				<li><%= link_to "Log out","/logout" %></li>
-			<% else %>	
-				<li><%= link_to "Log in", "/login" %></li>
-				<li><%= link_to "Sign up", "/signup" %></li>
-			<% end %>
-		</ul>
-	</nav>
-	<h1>Find your next concert</h1>
-</header>
+<%= render 'layouts/header' %>
 <div class="container">
 
 <% if flash[:message] %>

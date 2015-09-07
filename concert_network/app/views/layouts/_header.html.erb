@@ -1,0 +1,32 @@
+<header>
+	<nav class="navbar navbar-default">
+		<div class = "container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsed" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+				<%= link_to 'Concert network', root_path, class: 'navbar-brand' %>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="navbar-collapsed">
+				<ul class="nav navbar-nav">
+					<li><%= link_to "Concerts", concerts_path %></li>
+					<li><%= link_to "Add new concert", new_concert_path %></li>
+					<li><%= link_to "Popular concerts", concerts_popular_path %></li>
+					<li><%= link_to "Search by price", concerts_search_path %></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<% if current_user %>
+						<li><%= link_to "Log out","/logout" %></li>
+					<% else %>	
+						<li><%= link_to "Log in", "/login" %></li>
+						<li><%= link_to "Sign up", "/signup" %></li>
+					<% end %>
+				</ul>
+			</div><!-- /.navbar-collapse -->	
+		</div><!-- /.container-fluid -->
+	</nav>
+</header>

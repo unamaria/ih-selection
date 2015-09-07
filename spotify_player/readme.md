@@ -9,3 +9,4 @@ Keywords: OO JavaScript, [Spotify API](https://developer.spotify.com/web-api/sea
 ## Run it
 
 * Clone repo `git clone https://github.com/unamaria/ih-selection.git` (or copy files / download zip)
+* Open `index.html` in your browser

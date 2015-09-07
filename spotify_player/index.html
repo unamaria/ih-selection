@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+	<form>
+		<input type="text" id="song" name="song" placeholder="Type a song" required >
+		<input type="submit" value ="Find">
+	</form>
+
+	<div class="widget">
+		<div class="header">
+			<div class="btn-play disabled"></div>
+
+			<div class="metadata">
+			  <p class="title">Hunger of The Pine</p>
+			  <p class="author"><a href="javascript:;">alt-J</a></p>
+
+			  <div class="seekbar">
+			    <progress value="0" max="30"></progress>
+			  </div>
+			</div>
+		</div>
+		<div class="cover">
+			<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+		</div>
+
+		<audio class="js-player" src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+	</div>
+
+	<div class="modal fade js-modal">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+
+	      <div class="modal-header">
+	        <!-- Close button -->
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span>&times;</span>
+	        </button>
+
+	        <h2 class="modal-title" id="artist-name"></h2>
+	      </div>
+
+	      <div class="modal-body">
+	      </div>
+
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/bundle.js"></script>
+</body>
+</html>

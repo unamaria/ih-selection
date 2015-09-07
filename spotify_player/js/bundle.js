@@ -56,7 +56,9 @@ Spotify.prototype.setInitialListeners = function () {
 		var searchTerm = $('#song').val();
 		var url = "https://api.spotify.com/v1/search?type=track&query=" + searchTerm;
 		$.get(url, spotify.renderTrack);
-		this.$playButton.addClass("playing");
+		spotify.$playButton.removeClass("playing");
+		spotify.$playButton.addClass("disabled");
+		$('progress').prop("value", "0");
 	})
 	this.$playButton.on('click', function () { spotify.playPause() });
 	$('.js-player').on('timeupdate', function () { spotify.updateProgressBar() });

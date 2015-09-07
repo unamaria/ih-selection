@@ -17,6 +17,6 @@
 		</p></li>
 	<% end %>
 	</ul>
-<% else %>
+<% elsif !@amount.blank? %>
 	<p>No concerts upcoming under <%= @amount %>€, sorry!</p>
 <% end %>

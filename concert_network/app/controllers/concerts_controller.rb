@@ -25,7 +25,7 @@ class ConcertsController < ApplicationController
 	def create
 		concert = Concert.new concert_params
 		if concert.save
-			redirect_to concerts_path
+			redirect_to concert_path(concert)
 		else
 			render :new
 		end
@@ -34,7 +34,11 @@ class ConcertsController < ApplicationController
 	def search_by_price
 		@amount = params[:amount]
 		today = DateTime.current
-		@concerts = Concert.where("price <= ? AND date >= ?", @amount, today)
+		if !@amount.blank?
+			@concerts = Concert.where("price <= ? AND date >= ?", @amount, today)
+		else
+			flash.now[:message] = "Amount can't be blank"
+		end
 	end
 
 	def popular

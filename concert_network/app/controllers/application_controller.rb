@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   end
 
   def admin?(user)
-  	user.role == "admin"
+  	user && user.role == "admin"
   end
 end

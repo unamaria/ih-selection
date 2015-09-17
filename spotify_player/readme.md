@@ -4,7 +4,7 @@
 
 Search a song in the [Spotify API](https://developer.spotify.com/web-api/search-item/) and listen to its preview. The artist name is a link which shows information in a modal. Styles were provided.
 
-Keywords: OO JavaScript, [Spotify API](https://developer.spotify.com/web-api/search-item/), Bootstrap, Browserify
+Keywords: OO JavaScript, jQuery, [Spotify API](https://developer.spotify.com/web-api/search-item/), Bootstrap, Browserify
 
 ## Run it
 

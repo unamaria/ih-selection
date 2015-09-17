@@ -2,7 +2,7 @@
 
 ## Description
 
-Command line game in Node that quizzes on world capitals. There's a random bonus question worth double its points.
+Command line game in JavaScript that quizzes on world capitals. There's a random bonus question worth double its points.
 
 Keywords: OO JavaScript, node, [read](https://github.com/isaacs/read), module.exports
 

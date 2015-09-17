@@ -10,7 +10,7 @@ Ruby on Rails app where users can submit products to sell and other users can bi
 
 ## Capital quiz
 
-Command line game in Node that quizzes on world capitals.
+Command line game in JavaScript that quizzes on world capitals.
 
 ## Concert network
 
@@ -18,7 +18,7 @@ Ruby on Rails app to help users find interesting concerts.
 
 ## Game of rooms
 
-Command line game in Node to move around rooms and interact with objects.
+Command line game in JavaScript to move around rooms and interact with objects.
 
 ## Shouter
 
@@ -26,7 +26,7 @@ Basic Sinatra application where logged in users can "shout" messages of 200 char
 
 ## Spotify player
 
-Music player handled with JS to search a song in the [Spotify API](https://developer.spotify.com/web-api/search-item/) and listen to its preview.
+Music player handled with JavaScript and jQuery to search a song in the [Spotify API](https://developer.spotify.com/web-api/search-item/) and listen to its preview.
 
 ## Terminal keynote
 
